@@ -1,25 +1,40 @@
-# Langchain
+# Dự Án Langchain
 
-### How to run this project
+## Hướng Dẫn Chạy Dự Án
 
-### Cấu trúc dự án :
+## Cấu Trúc Dự Án
 
-##### data_source : Thư mục dùng để lưu trữ các tài liệu phục vụ cho việc xây dựng hệ cơ sở dữ liệu vector.
+### Thư Mục `data_source`
+Thư mục này chứa các tài liệu được sử dụng để xây dựng cơ sở dữ liệu vector.
 
-##### data_source/generative_ai/download.py: File code dùng để tải tự động một số các bài báo khoa học dưới dạng file pdf.
+- **data_source/generative_ai/download.py**
+  - Script này được dùng để tự động tải các bài báo khoa học dưới dạng file PDF.
 
-##### src/base/llm_model: File code dùng để khai báo hàm khởi tạo mô hình ngôn ngữ lớn.
+### Thư Mục `src/base`
+- **llm_model.py**
+  - File này chứa hàm khởi tạo mô hình ngôn ngữ lớn (LLM).
 
-##### src/rag/: Thư mục dùng để lưu trữ các code liên quan đến xây dựng RAG, bao gồm:
+### Thư Mục `src/rag`
+Thư mục này chứa các mã nguồn liên quan đến việc xây dựng Retrieval-Augmented Generation (RAG).
 
-###### (a) src/rag/file_loader.py: File code dùng để khai báo các hàm load file pdf (vì tài liệu của chúng ta thu thập thuộc file pdf).
+- **file_loader.py**
+  - File này chứa các hàm để tải các file PDF (vì tài liệu thu thập là file PDF).
+  
+- **main.py**
+  - File này chứa hàm khởi tạo chains.
+  
+- **offline_rag.py**
+  - File này chứa khai báo cho PromptTemplate.
+  
+- **utils.py**
+  - File này chứa hàm tách câu trả lời từ model.
+  
+- **vectorstore.py**
+  - File này chứa hàm khởi tạo hệ cơ sở dữ liệu vector.
 
-###### (b) src/rag/main.py: File code dùng để khai báo hàm khởi tạo chains.
+### Thư Mục `src`
+- **app.py**
+  - File này chứa mã khởi tạo API.
 
-###### (c) src/rag/offline_rag.py: File code dùng để khai báo PromptTemplate.
-
-###### (d) src/rag/utils.py: File code dùng để khai báo hàm tách câu trả lời từ model.
-
-###### (e) src/rag/vectorstore.py: File code dùng để khai báo hàm khởi tạo hệ cơ sở dữ liệu vector.
-
-##### src/app.py: File code dùng để khởi tạo API.
+## Lưu Ý
+- Đảm bảo cài đặt mọi phụ thuộc và thực thi các script trong môi trường phù hợp để tránh các lỗi không mong muốn.
